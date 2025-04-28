@@ -90,13 +90,13 @@ pub enum SubscribedValue {
 )]
 pub struct HashN<const LEN: usize>(pub [u8; LEN]);
 
-impl<const LEN: usize> rand::distributions::Distribution<HashN<LEN>>
-    for rand::distributions::Standard
-{
-    fn sample<R: rand::Rng + ?Sized>(&self, rng: &mut R) -> HashN<LEN> {
-        HashN(rng.gen())
-    }
-}
+// impl<const LEN: usize> rand::distributions::Distribution<HashN<LEN>>
+//     for rand::distributions::Standard
+// {
+//     fn sample<R: rand::Rng + ?Sized>(&self, rng: &mut R) -> HashN<LEN> {
+//         HashN(rng.gen())
+//     }
+// }
 
 impl<const LEN: usize> std::str::FromStr for HashN<LEN> {
     type Err = hex::FromHexError;
